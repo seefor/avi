@@ -1,0 +1,15 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local environment files
+.env
+.DS_Store
+
+# Real lab inventory and runtime logs
+testbed.yaml
+avi_tool_log.jsonl
+

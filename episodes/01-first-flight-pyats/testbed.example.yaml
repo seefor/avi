@@ -1,0 +1,35 @@
+# This file is a safe example testbed for Episode 1.
+# Copy it to testbed.yaml, then edit the copied file for your lab.
+#
+# The real testbed.yaml is ignored by Git because it may contain credentials.
+
+testbed:
+  name: avi_episode_01_lab
+
+devices:
+  core-r1:
+    # The operating system tells pyATS/Unicon what kind of device to expect.
+    os: iosxe
+
+    # The device type is a friendly label for this lab device.
+    type: router
+
+    # Credentials used for SSH login and enable mode.
+    # Replace these in your local testbed.yaml if your lab uses different values.
+    credentials:
+      default:
+        username: admin
+        password: cisco123
+      enable:
+        password: cisco123
+
+    connections:
+      cli:
+        # Episode 1 uses SSH through pyATS/Unicon.
+        protocol: ssh
+
+        # Replace this placeholder IP in your local testbed.yaml.
+        ip: 192.168.1.10
+
+        # Standard SSH port.
+        port: 22
