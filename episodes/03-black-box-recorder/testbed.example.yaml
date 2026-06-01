@@ -1,0 +1,15 @@
+# Safe example testbed for Episode 3.
+# Copy to testbed.yaml and add your local lab credentials there.
+
+testbed:
+  name: avi_episode_03_cat9k_lab
+
+devices:
+  Cat9k_AO_Sandbox:
+    os: iosxe
+    type: switch
+    connections:
+      cli:
+        protocol: ssh
+        ip: 10.10.20.66
+        port: 22
