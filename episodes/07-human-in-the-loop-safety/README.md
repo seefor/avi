@@ -4,6 +4,18 @@ Episode 7 adds an approval gate.
 
 Avi can now observe state, structure output, review multiple devices, and compare observed state against intended state. That does not mean Avi should act on its own. This episode introduces a simple approval workflow that separates recommendations from execution.
 
+## Where This Fits in the Avi Journey
+
+Episode 6 taught Avi to compare observed state against intended state and identify drift for review.
+
+Episode 7 adds the control layer.
+
+This is where Avi learns that a finding is not the same thing as permission to act. The assistant can package a recommendation, explain the risk, and ask for a human decision. Approval, rejection, and deferral are all valid outcomes.
+
+Why it matters: safe network assistants need clear boundaries between suggestion, approval, and execution.
+
+Still out of scope: executing changes, automatic remediation, live ticket creation, LLM reasoning, and production workflow orchestration.
+
 ## Goal
 
 Build a review packet that a human can approve, reject, or defer:
