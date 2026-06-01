@@ -21,9 +21,11 @@ from rich.panel import Panel
 
 TESTBED_FILE = "testbed.yaml"
 LOG_FILE = "avi_tool_log.jsonl"
-DEFAULT_DEVICE = "core-r1"
+DEFAULT_DEVICE = "Cat9k_AO_Sandbox"
 DEFAULT_COMMAND = "show ip interface brief"
-DEFAULT_MISSION = "Hey Avi, check core-r1 and tell me if any interfaces are down."
+DEFAULT_MISSION = (
+    "Hey Avi, check Cat9k_AO_Sandbox and tell me if any interfaces are down."
+)
 
 # Episode 1 is intentionally read-only. This allowlist makes the safety boundary
 # visible in code instead of relying only on narration or prompt wording.
