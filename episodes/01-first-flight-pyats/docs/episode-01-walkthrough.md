@@ -13,7 +13,26 @@ Teaching point:
 - Agents are only useful when they have reliable tools.
 - Episode 1 is about trust, not autonomy.
 
-## 2. What We Are Building
+## 2. Avi Flight Rules for Episode 1
+
+What to say:
+
+"Before we run anything, Avi has a few flight rules. Read-only commands only. No configuration mode. No autonomous decisions. Log every tool call. And a human reviews the result before any action is taken. These are not limitations. This is how we build trust."
+
+Flight rules:
+
+1. Read-only commands only.
+2. No configuration mode.
+3. No autonomous decisions.
+4. Log every tool call.
+5. A human reviews the result before any action is taken.
+
+Teaching point:
+
+- Safe agents need boundaries, not just prompts.
+- Trust comes from repeatable behavior and evidence.
+
+## 3. What We Are Building
 
 What to say:
 
@@ -30,7 +49,7 @@ Teaching point:
 - We are not building the full NetClaw-style assistant yet.
 - We are building the first safe building block.
 
-## 3. Why pyATS
+## 4. Why pyATS
 
 What to say:
 
@@ -42,7 +61,7 @@ Teaching points:
 - Unicon handles CLI connection behavior.
 - This episode does not use Netmiko.
 
-## 4. Project Setup
+## 5. Project Setup
 
 Terminal commands:
 
@@ -72,7 +91,7 @@ Teaching point:
 
 - Keep the demo environment predictable.
 
-## 5. Testbed YAML
+## 6. Testbed YAML
 
 Terminal command:
 
@@ -103,11 +122,11 @@ Teaching point:
 - Commit the example file.
 - Do not commit the real `testbed.yaml`.
 
-## 6. Building Avi's First Tool
+## 7. Building Avi's First Tool
 
 What to say:
 
-"Now we build the first real tool. It loads the testbed, finds the device, connects over SSH, runs `show ip interface brief`, logs what happened, and disconnects."
+"Now we build the first real tool. It loads the testbed, finds the device, checks that the command is approved, connects over SSH, runs `show ip interface brief`, logs what happened, and disconnects."
 
 Functions to show:
 
@@ -123,8 +142,9 @@ Teaching points:
 - Use `finally` to disconnect.
 - Log both success and failure.
 - Keep the command read-only.
+- Use an allowlist so safety is enforced in code, not just in the script narration.
 
-## 7. Running the First Flight
+## 8. Running the First Flight
 
 Terminal command:
 
@@ -134,13 +154,13 @@ python avi_pilot_01_pyats.py
 
 What to say:
 
-"This is not a chatbot yet. The script prints the mission, uses the pyATS tool, and returns a report. The agentic layer comes later."
+"This is not a chatbot yet. The script prints the mission, uses the approved pyATS tool, and returns a report. The agentic layer comes later."
 
 Teaching point:
 
 - A useful tool can exist before an LLM is involved.
 
-## 8. Reading the Output
+## 9. Reading the Output
 
 What to say:
 
@@ -159,7 +179,7 @@ Teaching point:
 
 - Read-only summaries are a safe place to start.
 
-## 9. The Tool Log
+## 10. The Tool Log
 
 Terminal command:
 
@@ -177,17 +197,17 @@ Teaching point:
 - Logs help with troubleshooting.
 - Logs become more important as the assistant gains more capability.
 
-## 10. Wrap-Up
+## 11. Wrap-Up
 
 What to say:
 
-"Today Avi learned one move: connect to a device, run a safe command, summarize the result, and record the flight. That is small, but it is the right kind of small."
+"Today Avi learned one move: connect to a device, run an approved safe command, summarize the result, and record the flight. That is small, but it is the right kind of small."
 
 Teaching point:
 
 - Good agents are built from reliable, observable tool calls.
 
-## 11. Homework
+## 12. Homework
 
 Ask viewers to:
 
@@ -201,7 +221,7 @@ What to say:
 
 "That last one is important. Keep Episode 1 read-only. We are building trust before we build power."
 
-## 12. Tease Episode 2
+## 13. Tease Episode 2
 
 What to say:
 
