@@ -1,0 +1,20 @@
+# Example intended state for Episode 6.
+# This is intent data, not live device state.
+
+devices:
+  example-core-1:
+    interfaces:
+      ExampleInterface0:
+        expected_state: up
+        expected_ip: 192.0.2.10
+      ExampleInterface1:
+        expected_state: admin_down
+        expected_ip: unassigned
+  example-access-1:
+    interfaces:
+      ExampleInterface0:
+        expected_state: up
+        expected_ip: 192.0.2.20
+      ExampleInterface1:
+        expected_state: up
+        expected_ip: 192.0.2.21
