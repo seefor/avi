@@ -4,6 +4,18 @@ Episode 4 turns Avi's interface state into structured data that other tools can 
 
 In Episode 3, Avi created readable interface state objects. In this episode, we make the output stricter and more portable by producing validated JSON.
 
+## Where This Fits in the Avi Journey
+
+Episode 3 taught Avi to turn raw interface output into simple state objects.
+
+Episode 4 turns those state objects into validated structured output.
+
+This is the point where Avi starts producing data that is useful beyond the terminal. A human can still read the report, but another workflow, dashboard, or future assistant can also consume the same JSON safely.
+
+Why it matters: structured output becomes the contract between Avi and the systems that may use Avi's findings later.
+
+Still out of scope: live multi-device collection, source of truth comparison, approval decisions, LLM reasoning, and configuration changes.
+
 ## Goal
 
 Create a structured report with:
