@@ -12,4 +12,6 @@ env/
 # Real lab inventory and runtime logs
 testbed.yaml
 avi_tool_log.jsonl
-
+avi_black_box.jsonl
+avi_interface_report.json
+avi_approval_record.json
