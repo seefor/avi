@@ -4,6 +4,18 @@ Episode 3 teaches Avi to move from raw CLI output toward a clearer operational s
 
 Avi still uses approved read-only commands. It still does not configure anything. The improvement in this episode is interpretation: Avi starts turning interface output into simple state objects a human can review.
 
+## Where This Fits in the Avi Journey
+
+Episode 2 gave Avi a better evidence trail with the Black Box Recorder.
+
+Episode 3 teaches Avi to read network state more carefully.
+
+Instead of only counting interfaces or printing raw command output, Avi starts turning CLI text into simple state objects. That gives the assistant a cleaner way to explain what it sees while keeping the raw command as the original evidence.
+
+Why it matters: a network assistant becomes more useful when it can separate observation from interpretation.
+
+Still out of scope: structured JSON contracts, multi-device rollups, source of truth comparison, approval workflows, and configuration changes.
+
 ## Goal
 
 Turn `show ip interface brief` output into a clearer state summary:
