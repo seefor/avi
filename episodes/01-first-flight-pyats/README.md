@@ -6,6 +6,18 @@ The goal is to connect to one Cisco IOS-XE Cat9k sandbox device using pyATS and 
 
 No LLM API is required yet. No configuration changes are allowed. Avi is just learning how to use one reliable network instrument.
 
+## Where This Fits in the Avi Journey
+
+This is the first building block in the Avi series.
+
+Avi is not starting as a chatbot, a reasoning engine, or a production network assistant. It starts with one safe network tool that works.
+
+In this episode, Avi learns how to reach one lab device, run one approved read-only command, summarize what it saw, and create the first evidence trail.
+
+Why it matters: every useful assistant needs reliable tools before it needs more intelligence.
+
+Still out of scope: LLMs, autonomous decisions, source of truth comparisons, multi-device workflows, and configuration changes.
+
 ## Avi Flight Rules for Episode 1
 
 Before we run anything, Avi has a few rules:
