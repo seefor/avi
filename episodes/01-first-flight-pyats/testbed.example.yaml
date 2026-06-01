@@ -2,34 +2,36 @@
 # Copy it to testbed.yaml, then edit the copied file for your lab.
 #
 # The real testbed.yaml is ignored by Git because it may contain credentials.
+# Do not paste running-config password values into this file. pyATS needs the
+# actual SSH username/password you use to access the sandbox.
 
 testbed:
-  name: avi_episode_01_lab
+  name: avi_episode_01_cat9k_lab
 
 devices:
-  core-r1:
+  Cat9k_AO_Sandbox:
     # The operating system tells pyATS/Unicon what kind of device to expect.
     os: iosxe
 
     # The device type is a friendly label for this lab device.
-    type: router
+    type: switch
 
     # Credentials used for SSH login and enable mode.
-    # Replace these in your local testbed.yaml if your lab uses different values.
+    # Replace these placeholders in your local testbed.yaml.
     credentials:
       default:
         username: admin
-        password: cisco123
+        password: "<your-sandbox-password>"
       enable:
-        password: cisco123
+        password: "<your-enable-password>"
 
     connections:
       cli:
         # Episode 1 uses SSH through pyATS/Unicon.
         protocol: ssh
 
-        # Replace this placeholder IP in your local testbed.yaml.
-        ip: 192.168.1.10
+        # Management IP from the lab Cat9k sandbox.
+        ip: 10.10.20.66
 
         # Standard SSH port.
         port: 22
