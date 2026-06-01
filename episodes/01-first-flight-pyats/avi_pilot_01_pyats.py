@@ -3,7 +3,8 @@ Episode 1: Building Avi - First Flight with pyATS SSH.
 
 This script is intentionally small and beginner-friendly. Avi is not a full
 agent yet. For now, Avi has one read-only tool that connects to a Cisco IOS-XE
-device, runs a show command, prints a basic report, and logs the tool call.
+device, runs an approved show command, prints a basic report, and logs the tool
+call.
 """
 
 from __future__ import annotations
@@ -23,6 +24,13 @@ LOG_FILE = "avi_tool_log.jsonl"
 DEFAULT_DEVICE = "core-r1"
 DEFAULT_COMMAND = "show ip interface brief"
 DEFAULT_MISSION = "Hey Avi, check core-r1 and tell me if any interfaces are down."
+
+# Episode 1 is intentionally read-only. This allowlist makes the safety boundary
+# visible in code instead of relying only on narration or prompt wording.
+ALLOWED_COMMANDS = {
+    "show ip interface brief",
+    "show version",
+}
 
 console = Console()
 
@@ -63,15 +71,26 @@ def load_testbed(testbed_file: str = TESTBED_FILE):
     return loader.load(str(testbed_path))
 
 
+def validate_command(command: str) -> None:
+    """Stop Episode 1 from running commands outside the approved read-only list."""
+    if command not in ALLOWED_COMMANDS:
+        allowed = ", ".join(sorted(ALLOWED_COMMANDS))
+        raise ValueError(
+            f"Command not allowed in Episode 1: {command}. "
+            f"Allowed commands: {allowed}"
+        )
+
+
 def run_show_command(
     device_name: str,
     command: str,
     testbed_file: str = TESTBED_FILE,
 ) -> str:
-    """Connect to one device with pyATS, run a read-only show command, and return output."""
+    """Connect to one device with pyATS, run an approved show command, and return output."""
     device = None
 
     try:
+        validate_command(command)
         testbed = load_testbed(testbed_file)
 
         if device_name not in testbed.devices:
