@@ -2,9 +2,21 @@
 
 In Episode 1, Avi takes a very small first flight.
 
-The goal is to connect to one Cisco IOS-XE lab device using pyATS and Unicon over SSH, run one read-only command, return a basic report, and log the tool call.
+The goal is to connect to one Cisco IOS-XE lab device using pyATS and Unicon over SSH, run one approved read-only command, return a basic report, and log the tool call.
 
 No LLM API is required yet. No configuration changes are allowed. Avi is just learning how to use one reliable network instrument.
+
+## Avi Flight Rules for Episode 1
+
+Before we run anything, Avi has a few rules:
+
+1. Read-only commands only.
+2. No configuration mode.
+3. No autonomous decisions.
+4. Log every tool call.
+5. A human reviews the result before any action is taken.
+
+These rules are not limitations. They are how we build trust.
 
 ## Architecture
 
@@ -12,7 +24,7 @@ No LLM API is required yet. No configuration changes are allowed. Avi is just le
 User Prompt -> Avi -> pyATS Tool -> SSH -> Router -> show ip interface brief -> Report
 ```
 
-That flow is the beginning of agentic network automation. A user asks for something, Avi chooses a tool, the tool checks the network, and Avi reports back with evidence.
+That flow is the beginning of agentic network automation. In Episode 1, the tool choice is still fixed on purpose. Avi receives a mission, runs one approved read-only tool, checks the network, and reports back with evidence.
 
 ## Setup on macOS or Linux
 
@@ -110,10 +122,11 @@ In this episode, you learned how to:
 
 - Describe a network device in a pyATS testbed.
 - Connect to Cisco IOS-XE over SSH using pyATS and Unicon.
-- Run a read-only show command.
+- Run an approved read-only show command.
 - Build a tiny tool function around network access.
 - Summarize raw CLI output into a simple report.
 - Log what Avi did.
+- Keep safety boundaries visible in the code.
 
 That log is Avi's first black box recorder. It is simple, but it starts the habit that matters: when automation touches the network, we keep evidence.
 
