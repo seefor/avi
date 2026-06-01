@@ -4,6 +4,18 @@ Episode 8 is the capstone for this first Avi arc.
 
 Avi is not NetClaw yet. That is the point. Avi is the careful learning path that teaches the building blocks of a trustworthy network assistant before the system becomes larger, more connected, and more capable.
 
+## Where This Fits in the Avi Journey
+
+Episodes 1 through 7 built the first trust layer for Avi: tool access, evidence, state reading, structured output, multi-device observation, source of truth comparison, and human approval.
+
+Episode 8 connects those pieces into the larger NetClaw direction.
+
+This episode is not about claiming Avi is finished. It is about showing that the small steps were not random. Each one becomes part of a governed assistant skeleton that can grow without skipping safety, observability, or human control.
+
+Why it matters: the path from demo script to useful assistant needs a maturity model, not just more features.
+
+Still out of scope: production deployment, autonomous changes, full orchestration, live NetBox/Tines integrations, and LLM-driven action loops.
+
 ## Goal
 
 Map the pieces we built into a larger assistant architecture:
