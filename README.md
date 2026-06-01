@@ -4,7 +4,27 @@ Avi is a lightweight educational network agent built for network engineers who w
 
 This repository supports the YouTube series **"Avi"**. The long-term direction is to build toward a larger NetClaw-style network automation assistant, but we are not trying to build the whole production system on day one. Avi starts small, stays understandable, and adds capability only when the foundation is solid.
 
-Series philosophy:
+## What Avi Is
+
+Avi is a build-in-public network assistant project.
+
+It is not starting with autonomy. It is starting with trust.
+
+Each episode adds one safe capability: observe, report, log, explain, compare, recommend, request approval, and only later act.
+
+## What Avi Is Not
+
+Avi is not a generic AI agent tutorial. Avi is not a chatbot-first project. Avi is not a "let the AI configure the network" demo. Avi is not NetClaw yet.
+
+Avi is the careful path toward a network assistant we would actually trust near real infrastructure.
+
+## How Avi Is Different From the Workshop
+
+The AI Networking Workshop teaches the concepts of LLMs, prompts, memory, and agents in a classroom format.
+
+Avi is different: Avi is the build-in-public story of turning those ideas into a trusted network assistant, one safe capability at a time.
+
+## Series Philosophy
 
 > Good agents are built on boring tools that work.
 
@@ -42,11 +62,12 @@ That restraint is the point. Read-only observation comes first.
 ## Series Roadmap
 
 1. First Flight with pyATS SSH
-2. Teaching Avi to Read Network State
-3. Structured Output and Parsing
-4. The Black Box Recorder
-5. Human-in-the-Loop Safety
+2. The Black Box Recorder
+3. Teaching Avi to Read Network State
+4. Structured Output and Parsing
+5. Multi-Device Observation
 6. Source of Truth
-7. From Avi to NetClaw
+7. Human-in-the-Loop Safety
+8. From Avi to NetClaw
 
 Each episode adds one useful building block. By the end, Avi should feel less like a demo script and more like the early skeleton of a real network assistant.
