@@ -4,6 +4,18 @@ Episode 5 teaches Avi to think beyond a single device.
 
 So far, Avi has focused on one sandbox device. That is the right way to start. But real network operations rarely stop at one box. In this episode, Avi uses structured sample observations from multiple devices and creates a fleet-level review.
 
+## Where This Fits in the Avi Journey
+
+Episode 4 gave Avi validated structured output.
+
+Episode 5 uses that structure to think across more than one device.
+
+Avi should not become a single-device toy. This episode introduces a pattern for keeping per-device observations visible while also producing a fleet-level summary. The rollup is useful, but it should not hide the evidence from each device.
+
+Why it matters: real operational workflows need both the big picture and the device-level details.
+
+Still out of scope: live multi-device collection, source of truth comparison, approval workflows, LLM reasoning, and configuration changes.
+
 ## Goal
 
 Build a simple multi-device observation pattern:
