@@ -4,6 +4,18 @@ Episode 2 turns Avi's simple JSON Lines log into a reusable flight recorder.
 
 Episode 1 proved Avi could connect to a Cat9k sandbox, run one approved read-only command, summarize the result, and write a log entry. Episode 2 keeps the same safe behavior, but improves the evidence trail around each tool call.
 
+## Where This Fits in the Avi Journey
+
+Episode 1 gave Avi its first safe network instrument: a pyATS SSH tool that could observe one device and report what it saw.
+
+Episode 2 makes the evidence trail more intentional.
+
+Before Avi becomes smarter, it needs a better record of what it did. The Black Box Recorder captures the tool name, device, command, timing, status, summary, and error details when something fails.
+
+Why it matters: trust is not only about getting the right answer. It is also about being able to inspect how Avi got there.
+
+Still out of scope: LLM reasoning, multi-step workflows, source of truth checks, approval workflows, and configuration changes.
+
 ## Goal
 
 Build a small reusable recorder that captures:
