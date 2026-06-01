@@ -6,7 +6,7 @@ This walkthrough is written to be camera-ready. Use it as the spine for the epis
 
 What to say:
 
-"If we're going to build a network agent, the first thing it needs is not a giant brain. It needs one boring tool that works. Today Avi is going to connect to a router, run one read-only command, and tell us what it saw."
+"If we're going to build a network agent, the first thing it needs is not a giant brain. It needs one boring tool that works. Today Avi is going to connect to a Cat9k sandbox, run one read-only command, and tell us what it saw."
 
 Teaching point:
 
@@ -36,12 +36,12 @@ Teaching point:
 
 What to say:
 
-"This is Avi's first flight. The pilot is small. The instrument is pyATS. The mission is simple: check `core-r1` and tell me if any interfaces are down."
+"This is Avi's first flight. The pilot is small. The instrument is pyATS. The mission is simple: check `Cat9k_AO_Sandbox` and tell me if any interfaces are down."
 
 Architecture:
 
 ```text
-User Prompt -> Avi -> pyATS Tool -> SSH -> Router -> show ip interface brief -> Report
+User Prompt -> Avi -> pyATS Tool -> SSH -> Cat9k Sandbox -> show ip interface brief -> Report
 ```
 
 Teaching point:
@@ -107,13 +107,14 @@ Copy-Item testbed.example.yaml testbed.yaml
 
 What to say:
 
-"The testbed is Avi's map. It tells pyATS what device exists, how to reach it, and what credentials to use."
+"The testbed is Avi's map. It tells pyATS what device exists, how to reach it, and what credentials to use. For this lab, the device is `Cat9k_AO_Sandbox`, the operating system is `iosxe`, and the connection is SSH to the sandbox management address."
 
 Fields to explain:
 
 - `devices`: The devices in the lab.
-- `core-r1`: The device name Avi will use.
+- `Cat9k_AO_Sandbox`: The device name Avi will use.
 - `os: iosxe`: The network operating system.
+- `type: switch`: A friendly label for this Cat9k sandbox.
 - `credentials`: Login and enable credentials.
 - `connections.cli`: The SSH connection details.
 
@@ -121,6 +122,7 @@ Teaching point:
 
 - Commit the example file.
 - Do not commit the real `testbed.yaml`.
+- Do not paste running-config password strings into the testbed. Use the actual SSH credentials you were given for the sandbox.
 
 ## 7. Building Avi's First Tool
 
@@ -132,6 +134,7 @@ Functions to show:
 
 - `log_tool_call()`
 - `load_testbed()`
+- `validate_command()`
 - `run_show_command()`
 - `summarize_interface_status()`
 - `avi_report()`
@@ -155,6 +158,12 @@ python avi_pilot_01_pyats.py
 What to say:
 
 "This is not a chatbot yet. The script prints the mission, uses the approved pyATS tool, and returns a report. The agentic layer comes later."
+
+Default mission:
+
+```text
+Hey Avi, check Cat9k_AO_Sandbox and tell me if any interfaces are down.
+```
 
 Teaching point:
 
@@ -201,7 +210,7 @@ Teaching point:
 
 What to say:
 
-"Today Avi learned one move: connect to a device, run an approved safe command, summarize the result, and record the flight. That is small, but it is the right kind of small."
+"Today Avi learned one move: connect to the Cat9k sandbox, run an approved safe command, summarize the result, and record the flight. That is small, but it is the right kind of small."
 
 Teaching point:
 
@@ -212,7 +221,7 @@ Teaching point:
 Ask viewers to:
 
 1. Change the device IP.
-2. Add a second device.
+2. Add a second approved read-only command.
 3. Try `show version`.
 4. Look at the tool log.
 5. Do not add config changes yet.
@@ -225,7 +234,7 @@ What to say:
 
 What to say:
 
-"In Episode 2, we'll start teaching Avi to read network state more carefully. The first flight proved we can reach the router. Next, we'll make the observation more useful."
+"In Episode 2, we'll start teaching Avi to read network state more carefully. The first flight proved we can reach the sandbox. Next, we'll make the observation more useful."
 
 Teaching point:
 
